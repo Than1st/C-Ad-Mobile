@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splashscreenFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kci.adsverification.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanQrFragment"
+        android:name="com.kci.adsverification.ui.scanqr.ScanQrFragment"
+        android:label="fragment_scan_qr"
+        tools:layout="@layout/fragment_scan_qr" >
+        <action
+            android:id="@+id/action_scanQrFragment_to_dataIklanFragment"
+            app:destination="@id/dataIklanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataIklanFragment"
+        android:name="com.kci.adsverification.ui.dataiklan.DataIklanFragment"
+        android:label="fragment_data_iklan"
+        tools:layout="@layout/fragment_data_iklan" >
+        <action
+            app:popUpTo="@id/dataIklanFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_dataIklanFragment_to_alertPageFragment"
+            app:destination="@id/alertPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertPageFragment"
+        android:name="com.kci.adsverification.ui.alertpage.AlertPageFragment"
+        android:label="fragment_alert_page"
+        tools:layout="@layout/fragment_alert_page" >
+        <action
+            app:popUpTo="@id/alertPageFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_alertPageFragment_to_scanQrFragment"
+            app:destination="@id/scanQrFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashscreenFragment"
+        android:name="com.kci.adsverification.ui.splashscreen.SplashscreenFragment"
+        android:label="fragment_splashscreen"
+        tools:layout="@layout/fragment_splashscreen" >
+        <action
+            android:id="@+id/action_splashscreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashscreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.kci.adsverification.ui.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_scanQrFragment"
+            app:destination="@id/scanQrFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

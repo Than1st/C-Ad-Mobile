@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ads Verification</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_text">Login</string>
+    <string name="content_nomor_rangkaian">: %s</string>
+    <string name="content_nomor_kereta">: %s</string>
+    <string name="format_content">: %s</string>
+</resources>
