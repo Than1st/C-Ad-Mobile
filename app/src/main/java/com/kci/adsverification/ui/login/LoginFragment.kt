@@ -18,6 +18,7 @@ import com.kci.adsverification.data.model.LoginRequest
 import com.kci.adsverification.databinding.FragmentLoginBinding
 import com.kci.adsverification.ui.dashboard.DashboardFragment.Companion.NAMA_VERIFIKATOR
 import com.kci.adsverification.ui.dashboard.DashboardFragment.Companion.NIK_VERIFIKATOR
+import com.kci.adsverification.ui.dashboard.DashboardFragment.Companion.TOKEN_VERIFIKATOR
 import com.kci.adsverification.ui.dashboard.DashboardFragment.Companion.USERNAME_VERIFIKATOR
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -101,6 +102,7 @@ class LoginFragment : Fragment() {
                 bundle.putString(NIK_VERIFIKATOR, res.nik)
                 bundle.putString(NAMA_VERIFIKATOR, res.name)
                 bundle.putString(USERNAME_VERIFIKATOR, res.username)
+                bundle.putString(TOKEN_VERIFIKATOR, res.accessToken)
                 findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment, bundle)
             }
         }

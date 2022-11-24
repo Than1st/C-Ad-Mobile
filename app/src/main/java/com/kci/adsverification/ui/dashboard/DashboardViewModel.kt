@@ -14,4 +14,9 @@ class DashboardViewModel @Inject constructor(private val repository: Repository)
             repository.deleteUserPref()
         }
     }
+    fun logout(token:String){
+        viewModelScope.launch {
+            repository.logout(token)
+        }
+    }
 }

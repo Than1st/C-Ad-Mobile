@@ -20,11 +20,13 @@ class DashboardFragment : Fragment() {
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() =_binding!!
     private val viewModel: DashboardViewModel by viewModels()
+    private var token = "0"
 
     companion object{
         const val NIK_VERIFIKATOR = "nik_verifikator"
         const val NAMA_VERIFIKATOR = "nama_verifikator"
         const val USERNAME_VERIFIKATOR = "username_verifikator"
+        const val TOKEN_VERIFIKATOR = "token_verifikator"
     }
 
     override fun onCreateView(
@@ -43,6 +45,7 @@ class DashboardFragment : Fragment() {
         imm.hideSoftInputFromWindow(requireView().windowToken, 0)
         val getBundle = arguments
         if(getBundle?.getString(NIK_VERIFIKATOR) != null){
+            token = getBundle.getString(TOKEN_VERIFIKATOR)!!
             binding.etNameVerifikator.text = checkNull(getBundle.getString(NAMA_VERIFIKATOR))
             binding.etContentNik.text = getString(R.string.format_content, checkNull(getBundle.getString(NIK_VERIFIKATOR)))
             binding.etContentUsername.text = getString(R.string.format_content, checkNull(getBundle.getString(USERNAME_VERIFIKATOR)))
@@ -55,6 +58,7 @@ class DashboardFragment : Fragment() {
                 .setTitle("Konfirmasi Logout")
                 .setMessage("Logout Akun?")
                 .setPositiveButton("Ya") { dialog, _ ->
+                    viewModel.logout("Bearer $token")
                     viewModel.deleteUserPref()
                     dialog.dismiss()
                     AlertDialog.Builder(requireContext())

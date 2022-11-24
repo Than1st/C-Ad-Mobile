@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
-private const val BASE_URL = "http://192.168.42.94/"
+private const val BASE_URL = "http://192.168.42.64/"
 
 @Module
 @InstallIn(SingletonComponent::class)

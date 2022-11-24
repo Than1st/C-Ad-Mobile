@@ -25,5 +25,7 @@ data class Iklan(
     @SerializedName("updated_at")
     val updatedAt: Any,
     @SerializedName("nama_trainset")
-    val namaTrainset: String
+    val namaTrainset: String,
+    @SerializedName("visible")
+    val visible: Int
 )
