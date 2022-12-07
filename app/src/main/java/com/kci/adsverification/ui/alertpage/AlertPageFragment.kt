@@ -22,7 +22,7 @@ class AlertPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Handler().postDelayed({
-                findNavController().navigate(R.id.action_alertPageFragment_to_scanQrFragment)
+                findNavController().navigate(R.id.action_alertPageFragment_to_dashboardFragment)
         }, 2000)
     }
 }
