@@ -9,17 +9,22 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_logo"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_ads"/>
+        android:src="@drawable/bg_kereta"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_logo"/>
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/logo"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginBottom="32dp"
         android:scaleType="fitXY"
+        android:src="@drawable/logo_c_ad_white"
         app:layout_constraintBottom_toTopOf="@id/et_nip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

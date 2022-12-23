@@ -10,5 +10,5 @@
     <color name="kciRed">#EC1C1C</color>
     <color name="kciGreen">#198754</color>
     <color name="kciDarkRed">#dc3545</color>
-    <color name="transBlack">#80000000</color>
+    <color name="transBlack">#50000000</color>
 </resources>

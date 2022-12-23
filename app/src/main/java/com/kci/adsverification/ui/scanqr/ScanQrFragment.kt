@@ -9,10 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.kci.adsverification.R
 import com.budiyev.android.codescanner.*
-import com.kci.adsverification.data.model.IklanResponse
 import com.kci.adsverification.databinding.FragmentScanQrBinding
 import com.kci.adsverification.ui.dataiklan.DataIklanFragment.Companion.ID_IKLAN_KEY
-import org.json.JSONObject
 
 class ScanQrFragment : Fragment() {
 

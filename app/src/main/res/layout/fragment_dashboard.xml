@@ -7,11 +7,18 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_logo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_kereta" />
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_ads" />
+        android:src="@drawable/bg_logo"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_logout"
@@ -44,7 +51,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:elevation="24dp"
-                android:src="@drawable/ic_baseline_train_24"
+                android:src="@drawable/vector_krl_jr_205_perspektif_02"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
             <TextView

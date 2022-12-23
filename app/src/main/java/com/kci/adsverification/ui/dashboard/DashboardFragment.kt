@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.kci.adsverification.R
+import com.kci.adsverification.data.datastore.UserPreferences
 import com.kci.adsverification.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -49,6 +50,15 @@ class DashboardFragment : Fragment() {
             binding.etNameVerifikator.text = checkNull(getBundle.getString(NAMA_VERIFIKATOR))
             binding.etContentNik.text = getString(R.string.format_content, checkNull(getBundle.getString(NIK_VERIFIKATOR)))
             binding.etContentUsername.text = getString(R.string.format_content, checkNull(getBundle.getString(USERNAME_VERIFIKATOR)))
+        } else {
+            viewModel.getUserPref()
+        }
+        viewModel.dataUser.observe(viewLifecycleOwner) { res ->
+            if (res.nik != UserPreferences.DEF_NIK) {
+                binding.etNameVerifikator.text = checkNull(res.name)
+                binding.etContentNik.text = getString(R.string.format_content, checkNull(res.nik))
+                binding.etContentUsername.text = getString(R.string.format_content, checkNull(res.username))
+            }
         }
         binding.btnScan.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_scanQrFragment)

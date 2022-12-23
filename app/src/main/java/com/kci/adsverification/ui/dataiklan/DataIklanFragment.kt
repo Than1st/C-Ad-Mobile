@@ -83,10 +83,6 @@ class DataIklanFragment : Fragment() {
                                 R.string.format_content,
                                 IkRes.data.data.iklan[0].namaAgensi
                             )
-                            etContentNamaTrainset.text = getString(
-                                R.string.format_content,
-                                IkRes.data.data.iklan[0].namaTrainset
-                            )
                             etContentNomorKontrak.text = getString(
                                 R.string.format_content,
                                 IkRes.data.data.iklan[0].noKontrak
@@ -94,10 +90,6 @@ class DataIklanFragment : Fragment() {
                             etContentKontenIklan.text = getString(
                                 R.string.format_content,
                                 IkRes.data.data.iklan[0].kontenIklan
-                            )
-                            etContentKategoriIklan.text = getString(
-                                R.string.format_content,
-                                IkRes.data.data.iklan[0].kategoriIklan
                             )
                             etContentDurasiAwal.text = getString(
                                 R.string.format_content,
@@ -113,16 +105,28 @@ class DataIklanFragment : Fragment() {
                         }
                         var listKeretaIklan = ""
                         var listTitikIklan = ""
+                        var listKategoriIklan = ""
+                        var listTrainsetIklan = ""
                         val keretaIklan = IkRes.data.data.keretaIklan
                         val titikIklan = IkRes.data.data.titik
+                        val kategoriIklan = IkRes.data.data.kategori
+                        val trainsetIklan = IkRes.data.data.trainsetIklan
                         for (data in keretaIklan) {
                             listKeretaIklan += ", ${data.namaKereta}"
                         }
                         for (data in titikIklan) {
                             listTitikIklan += ", ${data.namaTitik}"
                         }
+                        for (data in kategoriIklan) {
+                            listKategoriIklan += ", ${data.namaKategori}"
+                        }
+                        for (data in trainsetIklan) {
+                            listTrainsetIklan += ", ${data.namaTrainset}"
+                        }
                         binding.etContentNamaKereta.text = listKeretaIklan.drop(2)
                         binding.etContentTitik.text = listTitikIklan.drop(2)
+                        binding.etContentKategoriIklan.text = listKategoriIklan.drop(2)
+                        binding.etContentNamaTrainset.text = listTrainsetIklan.drop(2)
                         } else {
                             findNavController().popBackStack()
                             Toast.makeText(requireContext(), "Iklan Tidak Ada!", Toast.LENGTH_SHORT)

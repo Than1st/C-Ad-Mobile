@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
-private const val BASE_URL = "http://192.168.42.64/"
+private const val BASE_URL = "https://c-iklan.kci.id/"
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -31,28 +31,26 @@ class NetworkModule {
         }
     }
 
-    @Singleton
-    @Provides
-    fun provideChuckerInterceptor(
-        @ApplicationContext context: Context
-    ) : ChuckerInterceptor {
-        return ChuckerInterceptor.Builder(context)
-            .collector(ChuckerCollector(context))
-            .maxContentLength(250000L)
-            .redactHeaders(emptySet())
-            .alwaysReadResponseBody(false)
-            .build()
-    }
+//    @Singleton
+//    @Provides
+//    fun provideChuckerInterceptor(
+//        @ApplicationContext context: Context
+//    ) : ChuckerInterceptor {
+//        return ChuckerInterceptor.Builder(context)
+//            .collector(ChuckerCollector(context))
+//            .maxContentLength(250000L)
+//            .redactHeaders(emptySet())
+//            .alwaysReadResponseBody(false)
+//            .build()
+//    }
 
     @Singleton
     @Provides
     fun provideOkHttp(
-        httpLoggingInterceptor: HttpLoggingInterceptor,
-        chuckerInterceptor: ChuckerInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .addInterceptor(chuckerInterceptor)
             .build()
     }
 
