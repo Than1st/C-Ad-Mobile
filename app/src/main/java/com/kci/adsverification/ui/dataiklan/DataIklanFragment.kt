@@ -77,7 +77,7 @@ class DataIklanFragment : Fragment() {
                 Status.SUCCESS -> {
                     progressDialog.dismiss()
                     if (IkRes.data?.data?.iklan?.count() ?: 0 != 0) {
-                        if(IkRes.data?.data?.iklan?.get(0)?.visible == 1){
+                        if(IkRes.data?.data?.iklan?.get(0)?.visible == true){
                         binding.apply {
                             etContentNamaAgency.text = getString(
                                 R.string.format_content,

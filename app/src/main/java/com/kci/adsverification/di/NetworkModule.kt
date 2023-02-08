@@ -17,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
+//private const val BASE_URL = "https://c-iklan.kci.id/"
 private const val BASE_URL = "https://c-iklan.kci.id/"
 
 @Module
